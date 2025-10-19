@@ -29,7 +29,7 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src'),
       '@fortawesome': resolve(__dirname, 'node_modules/@fortawesome'),
-      'bootstrap': resolve(__dirname, 'node_modules/bootstrap')
+      'bootstrap': resolve(__dirname, 'node_modules/bootstrap'),
     }
   },
   css: {
