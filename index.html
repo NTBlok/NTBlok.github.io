@@ -105,16 +105,15 @@
                             <img src="/public/img/ai-financial-assistant.png" class="card-img-top" alt="AI Financial Advisor">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">AI Financial Advisor</h5>
+                            <h5 class="card-title">AI Financial Assistant</h5>
                             <div class="card-text">
-                                <p class="short-description">A browser extension and backend API that uses LangChain and OpenAI to provide personalized financial advice.</p>
-                                <div class="long-description">
-                                    <p>This project features a Chrome extension that analyzes financial data and provides personalized advice through a secure backend API. The system uses LangChain to process natural language queries and OpenAI's models to generate context-aware financial recommendations. Built with React for the frontend and FastAPI for the backend, it includes user authentication, data encryption, and real-time market data integration.</p>
-                                    <p><strong>Technologies:</strong> Python, FastAPI, React, Scikit-learn, LangChain, OpenAI</p>
+                                <p class="short-description">A browser-native AI agent that observes financial dashboards, provides compliant investment advice, and executes approved actions with an audit trail.</p>
+                                <div class="long-description show">
+                                    <p>The AI Financial Assistant is a prototype for a browser-native agent designed to assist with decisions and automate investment actions. The extension is built with TypeScript WebExtension (Manifest V3) and operates directly within the browser to observe live web-based financial dashboards. It extracts context from the DOM and sends structured snapshots to a Python FastAPI backend server for AI processing. The backend runs a local LLM using Ollama for development and privacy, which is designed to be swappable for OpenAI API or other hosted LLMs. Using the LLM's responses, the backend advises financial actions for the user such as trade recommendations. The backend logs AI reasoning and user decisions that can be stored in a database such as SQLite or PostgreSQL for later reviewing. The backend uses Playwright automation to execute user approved financial actions within the target web interface. A React dashboard displays financial data and audit logs. The dashboard supports internal data from the AI agent and can be adapted to external financial open APIs.</p>
+                                    <p><strong>Technologies:</strong> TypeScript, WebExtension, Python, FastAPI, React, LangChain, Ollama/OpenAI, Playwright, SQLite/PostgreSQL</p>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <button class="btn btn-sm btn-outline-primary toggle-description">See More</button>
                                 <a href="https://github.com/NTBlok/ai-financial-agent" class="btn btn-primary">View Project</a>
                             </div>
                         </div>
@@ -130,13 +129,13 @@
                             <h5 class="card-title">Financial Anomaly Detection</h5>
                             <div class="card-text">
                                 <p class="short-description">A full stack application for detecting anomalies in financial data using machine learning and LLM powered advanced analytics.</p>
-                                <div class="long-description">
+                                <div class="long-description show">
                                     <p>This application provides real-time anomaly detection for financial transactions using a combination of statistical models and machine learning. The system processes streaming data, identifies unusual patterns, and provides detailed reports. The frontend dashboard visualizes anomalies and trends, while the backend handles data processing and model inference.</p>
                                     <p><strong>Technologies:</strong> Python, FastAPI, React, Typescript, Scikit-learn</p>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <button class="btn btn-sm btn-outline-primary toggle-description">See More</button>
+                                <!-- <button class="btn btn-sm btn-outline-primary toggle-description">See More</button> -->
                                 <a href="https://github.com/NTBlok/ml_financial_anomaly" class="btn btn-primary">View Project</a>
                             </div>
                         </div>
@@ -152,13 +151,13 @@
                             <h5 class="card-title">Hardware Subscription Platform</h5>
                             <div class="card-text">
                                 <p class="short-description">A comprehensive platform for tracking hardware health.</p>
-                                <div class="long-description">
+                                <div class="long-description show">
                                     <p>This platform enables businesses to manage hardware subscriptions with real-time health monitoring and predictive maintenance. The system collects telemetry data from hardware devices, uses machine learning to predict failures, and provides actionable insights. The dashboard offers a comprehensive view of all subscribed hardware with status updates and maintenance schedules.</p>
                                     <p><strong>Technologies:</strong> Python, FastAPI, Scikit-learn, React, Typescript,PostgreSQL</p>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <button class="btn btn-sm btn-outline-primary toggle-description">See More</button>
+                                <!-- <button class="btn btn-sm btn-outline-primary toggle-description">See More</button> -->
                                 <a href="https://github.com/NTBlok/ai-hardware-subscription" class="btn btn-primary">View Project</a>
                             </div>
                         </div>
@@ -174,13 +173,13 @@
             <h5 class="card-title">AI Course Planner</h5>
             <div class="card-text">
                 <p class="short-description">An AI assistant browser extension that automates generating university course schedules.</p>
-                <div class="long-description">
+                <div class="long-description show">
                     <p>This tool helps students generate possible course schedules based on natural language preferences. The extension is context-aware interacting with a university's course search page automatically selecting filters to generate possible schedules. Users can type their preferences and interact with the AI assistant.</p>
                     <p><strong>Technologies:</strong>React, Typescript, LangChain, OpenAI</p>
                 </div>
             </div>
             <div class="d-flex justify-content-between align-items-center mt-3">
-                <button class="btn btn-sm btn-outline-primary toggle-description">See More</button>
+                <!-- <button class="btn btn-sm btn-outline-primary toggle-description">See More</button> -->
                 <a href="https://github.com/NTBlok/ai-course-planner" class="btn btn-primary">View Project</a>
             </div>
         </div>

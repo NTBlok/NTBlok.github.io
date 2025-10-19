@@ -6,6 +6,7 @@ node_modules
 # Local env files
 .env
 .env.*.local
+notes
 
 # Build output
 # dist
