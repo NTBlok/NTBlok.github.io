@@ -18,6 +18,9 @@ export default defineConfig({
       }
     },
   },
+  optimizeDeps: {
+    include: ['bootstrap/dist/css/bootstrap.min.css']
+  },
   server: {
     port: 3000,
     open: true,
@@ -25,7 +28,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-      '@fortawesome': resolve(__dirname, 'node_modules/@fortawesome')
+      '@fortawesome': resolve(__dirname, 'node_modules/@fortawesome'),
+      'bootstrap': resolve(__dirname, 'node_modules/bootstrap')
     }
   },
   css: {
