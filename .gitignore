@@ -8,7 +8,7 @@ node_modules
 .env.*.local
 
 # Build output
-dist
+# dist
 dist-ssr
 *.local
 
