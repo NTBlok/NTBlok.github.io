@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: './',
+  base: process.env.NODE_ENV === 'production' ? '/NTBlok.github.io/' : '/',
   publicDir: 'public',
   build: {
     outDir: 'dist',
@@ -17,4 +17,7 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
+  optimizeDeps: {
+    include: ['bootstrap', '@fortawesome/fontawesome-free']
+  }
 });
