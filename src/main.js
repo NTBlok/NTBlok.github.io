@@ -1,9 +1,17 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+import $ from 'jquery';
+import * as Popper from '@popperjs/core';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+window.$ = $;
+window.jQuery = $;
+window.Popper = Popper;
+
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 document.querySelector('#app').innerHTML = `
