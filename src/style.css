@@ -1,96 +1,188 @@
+/* Reset and base styles */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: #333;
+  background-color: #fff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+/* Remove default margins and padding */
+html, body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* Main app container */
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+/* Navigation */
+.navbar {
+  width: 100%;
+  z-index: 1030; /* Ensure navbar stays on top */
 }
 
-.card {
-  padding: 2em;
+/* Hero section - adjust for fixed navbar */
+.hero {
+  padding-top: 76px; /* Height of navbar */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #426f9d; /* Match your hero background */
+  color: white;
+  margin: 0;
+  width: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+/* Content sections */
+section {
+  width: 100%;
+  padding: 80px 0;
 }
 
+/* Remove Vite template styles that might interfere */
+#app {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Reset text alignment */
+}
+
+/* Fix for Bootstrap container */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Remove Vite template button styles */
 button {
-  border-radius: 8px;
+  border-radius: 0.25rem; /* Bootstrap default */
+  padding: 0.375rem 0.75rem; /* Bootstrap default */
+  font-size: 1rem; /* Bootstrap default */
+  line-height: 1.5; /* Bootstrap default */
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, 
+              border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-@media (prefers-color-scheme: light) {
+/* Remove Vite template logo styles */
+.logo {
+  height: auto;
+  padding: 0;
+  will-change: auto;
+  transition: none;
+}
+
+.logo:hover {
+  filter: none;
+}
+
+/* Remove Vite template card styles */
+.card {
+  padding: 1rem; /* Bootstrap default */
+  margin-bottom: 1rem; /* Bootstrap default */
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.25rem;
+}
+
+/* Project cards styles */
+.card-text {
+  position: relative;
+  overflow: hidden;
+}
+
+.short-description {
+  display: block;
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.long-description {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.long-description p {
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+  transition-delay: 0.2s;
+}
+
+.long-description p:last-child {
+  margin-bottom: 0;
+}
+
+.long-description.show {
+  max-height: 1000px; /* Adjust based on content */
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.long-description.show p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure the button has proper z-index */
+.toggle-description {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Make sure the card body can expand */
+.card-body {
+  overflow: visible;
+}
+
+/* Fix for any potential overflow issues */
+.card {
+  overflow: visible;
+  transition: all 0.3s ease;
+}
+
+/* Add some hover effects */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Remove Vite template dark mode */
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #fff;
+    background-color: #212529; /* Bootstrap dark bg */
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  
+  body {
+    background-color: #212529;
   }
 }

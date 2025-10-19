@@ -1,27 +1,46 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Add click event to all toggle buttons
+export function initProjectCards() {
+    console.log('Initializing project cards...');
+    
     document.querySelectorAll('.toggle-description').forEach(button => {
-        button.addEventListener('click', function() {
-            const cardBody = this.closest('.card-body');
-            const shortDesc = cardBody.querySelector('.short-description');
+        // Initialize button text based on current state
+        const cardBody = button.closest('.card-body');
+        if (cardBody) {
             const longDesc = cardBody.querySelector('.long-description');
-            const isExpanded = longDesc.style.display === 'block';
-
-            // Toggle the display of descriptions
-            if (isExpanded) {
-                shortDesc.style.display = 'block';
-                longDesc.style.display = 'none';
-                this.textContent = 'See More';
-            } else {
-                shortDesc.style.display = 'block';
-                longDesc.style.display = 'block';
-                this.textContent = 'See Less';
+            if (longDesc) {
+                const isExpanded = longDesc.classList.contains('show');
+                button.textContent = isExpanded ? 'See Less' : 'See More';
+                button.classList.toggle('btn-primary', isExpanded);
+                button.classList.toggle('btn-outline-primary', !isExpanded);
+                button.classList.toggle('text-white', isExpanded);
             }
+        }
 
-            // Toggle button classes for visual feedback
-            this.classList.toggle('btn-outline-primary');
-            this.classList.toggle('btn-primary');
-            this.classList.toggle('text-white');
-        });
+        if (!button.dataset.listenerAdded) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const cardBody = this.closest('.card-body');
+                if (!cardBody) return;
+                
+                const cardText = cardBody.querySelector('.card-text');
+                if (!cardText) return;
+                
+                const longDesc = cardText.querySelector('.long-description');
+                if (!longDesc) return;
+                
+                // Toggle the show class on the long description
+                const isExpanded = longDesc.classList.toggle('show');
+                
+                // Update button text and classes
+                this.textContent = isExpanded ? 'See Less' : 'See More';
+                this.classList.toggle('btn-outline-primary', !isExpanded);
+                this.classList.toggle('btn-primary', isExpanded);
+                this.classList.toggle('text-white', isExpanded);
+                
+                // Mark as having a listener
+                this.dataset.listenerAdded = 'true';
+            });
+        }
     });
-});
+}

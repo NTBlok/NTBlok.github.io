@@ -11,13 +11,24 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
       },
+      output: {
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash][extname]',
+      }
     },
   },
   server: {
     port: 3000,
     open: true,
   },
-  optimizeDeps: {
-    include: ['bootstrap', '@fortawesome/fontawesome-free']
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
+      '@fortawesome': resolve(__dirname, 'node_modules/@fortawesome')
+    }
+  },
+  css: {
+    devSourcemap: true
   }
 });
