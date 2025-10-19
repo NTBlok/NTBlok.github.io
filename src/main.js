@@ -1,10 +1,10 @@
 // Import CSS first
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './style.css';
 
 // Then JS
+import 'bootstrap';
 import $ from 'jquery';
 import * as Popper from '@popperjs/core';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';

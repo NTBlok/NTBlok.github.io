@@ -32,7 +32,8 @@ export default defineConfig({
     devSourcemap: true,
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "bootstrap/scss/functions"; @import "bootstrap/scss/variables"; @import "bootstrap/scss/mixins";`
+        // Add Bootstrap's SCSS path to the include paths
+        includePaths: ['./node_modules'],
       }
     }
   }
