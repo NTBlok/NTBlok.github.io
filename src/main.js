@@ -1,10 +1,10 @@
 // Import CSS first
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './style.css';
 
 // Then JS
-import 'bootstrap';
 import $ from 'jquery';
 import * as Popper from '@popperjs/core';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
@@ -18,10 +18,10 @@ window.jQuery = $;
 window.Popper = Popper;
 
 // Import your custom JS
+import { initProjectCards } from './js/project-cards.js'; 
 import { initNavigation, handleScroll } from './js/navigation.js';
 import { initContactForm } from './js/contact-form.js';
 import { initAnimations } from './js/animations.js';
-import { initProjectCards } from './js/project-cards.js'; 
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
